@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Web to Lead Form</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://www.google.com/recaptcha/api.js"></script>
+    <script src="script.js"></script>
+  </head>
+  <body>
+    <!-- <META HTTP-EQUIV="Content-type" CONTENT="text/html; charset=UTF-8">-->
+    <h1>Create Lead</h1>
+    <form
+      action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8"
+      method="POST"
+      onsubmit="beforesubmit()"
+    >
+      <input type="hidden" name="oid" value="00D5j00000CgKfr" />
+      <input
+        type="hidden"
+        name="captcha_settings"
+        value='{"keyname":"WebToLead","fallback":"true","orgId":"00D5j00000CgKfr","ts":""}'
+      />
+
+      <input
+        type="hidden"
+        name="retURL"
+        value="https://rkcpratap.github.io/LeadForm-1/thanks.html"
+      />
+      <input type="hidden" name="Lead_Date__c" class="outputdate" />
+
+      <label for="first_name">First Name</label>
+      <input
+        id="first_name"
+        maxlength="40"
+        name="first_name"
+        size="20"
+        type="text"
+        required="true"
+      /><br />
+
+      <label for="last_name">Last Name</label>
+      <input
+        id="last_name"
+        maxlength="80"
+        name="last_name"
+        size="20"
+        type="text"
+        required="true"
+      /><br />
+
+      <label for="email">Email</label>
+      <input
+        id="email"
+        maxlength="80"
+        name="email"
+        size="20"
+        type="text"
+        required="true"
+      /><br />
+
+      <label for="company">Company</label>
+      <input
+        id="company"
+        maxlength="40"
+        name="company"
+        size="20"
+        type="text"
+        required="true"
+      /><br />
+
+      <label for="city">City</label>
+      <input id="city" maxlength="40" name="city" size="20" type="text" /><br />
+
+      <!--Lead Date:<span class="dateInput dateOnlyInput"><input  id="00N5j00000PpAvf" name="00N5j00000PpAvf" size="12" type="text" /></span><br>-->
+      <label for="Lead_Date">Lead Date</label>
+      <input type="date" required="true" class="inputdate" />
+      <input
+        type="hidden"
+        name="captcha_settings"
+        value='{"keyname":"WebToLead","fallback":"true","orgId":"00D5j00000CgKfr","ts":""}'
+      />
+      <div
+        class="g-recaptcha"
+        data-sitekey="6LctAAMoAAAAAPi8JIrnlVkFuC1ftvPT15Igx0gN"
+      ></div>
+      <br />
+      <input type="submit" name="submit" class="submit" />
+    </form>
+  </body>
+</html>
